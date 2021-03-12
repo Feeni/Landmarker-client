@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Landmarkers</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="https://dewey.tailorbrands.com/production/brand_version_mockup_image/936/4829065936_2c706406-ad9d-4ad9-bf7b-9e26f945901e.png?cb=1615388703">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <button id="account-modal" type="button" data-toggle="modal" data-target="#accountModal">
+        Account
+      </button>
+      <div class="container" id="landmarker-logo">
+        <img id="the-logo" src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/248/4824631248_131f592f-2b5f-433d-b770-ecb87f9e91e8.png?cb=1615334288" alt>
+      </div>
+      <div class="container" id='auth-container'>
+        <div class="tab col-4-md">
+          <button class="tablinks" onclick="openCity(event, 'login')">Login</button>
+          <button class="tablinks" onclick="openCity(event, 'signUp')">Sign-Up</button>
+          <div id="login" class="tabcontent">
+            <section id="login-content">
+              <form action="" id="login-form">
+                  <input type="email" placeholder="Email" name="credentials[email]" required="" id="login-username" />
+                <div>
+                  <input type="password" id="login-password" name="credentials[password]" placeholder="Enter the password">
+                </div>
+                <div>
+                  <input type="submit" value="Login" />
+                </div>
+              </form><!-- form -->
+            </section><!-- login-content -->
+
+          </div>
+
+          <div id="signUp" class="tabcontent">
+            <section id="signUp-content">
+              <form action="" id="sign-up">
+                <div>
+                  <input type="email" placeholder="Email" name="credentials[email]"required="" id="signUp-username" />
+                </div>
+                <div>
+                  <input type="password" id="signUp-password" name="credentials[password]" placeholder="Enter the password">
+                </div>
+                <div>
+                  <input type="password" id="confirm-signUp-password" name="credentials[password_confirmation]" placeholder="Confirm the password">
+                </div>
+                <div>
+                  <input type="submit" value="Sign Up" />
+                </div>
+              </form><!-- form -->
+            </section> <!--sign-up section-->
+          </div>
+        </div>
+
+
+
+
+      </div><!-- container -->
+      <div class="container" id="message-container">
+        <div id="message"></div>
+      </div>
+        <div class="container" id="main-buttons">
+          <div>
+            <!-- Button trigger modal -->
+            <button type="button" id="create-modal-button" data-toggle="modal" data-target="#create-modal-long">
+              Create a Landmark
+            </button>
+          </div>
+          <div>
+            <button id="viewLandmarks-button">View All Your Landmarks
+            </button>
+          </div>
+        </div>
+          <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="accountModalLabel">User's Account</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                <form id="change-password">
+                  <input class="col" id="current-pw" autocomplete="on" spellcheck="true" name="passwords[old]" type="password" placeholder="Enter Current Password" required>
+                  <input class="col" id="new-pw" autocomplete="on" spellcheck="true" name="passwords[new]" type="password" placeholder="Enter New Password" required>
+                  <button id="save-changes">Save Changes</button>
+                </form>
+                <form action="" id="sign-out">
+                  <div>
+                      <input type="submit" value="Sign Out" />
+                  </div>
+                </form>
+                <div class="container" id="another-message"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="create-modal-long" tabindex="-1" role="dialog" aria-labelledby="create-modal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content" id="create-modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="create-modal">Create a Landmark</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" id="create-modal-body">
+                  <div id="create-content">
+                    <form id="input-content">
+                      <div id="landmark-name">
+                        <h4>Landmark Name</h4>
+                        <input type="text" name="landmark[name]" placeholder="Landmark's Name" required><br>
+                      </div>
+
+                      <div id="landmark-city" >
+                        <h4>Landmark City</h4>
+                        <input type="text" name="landmark[city]" placeholder="Landmark's City" required>
+                      </div>
+
+                      <div id="landmark-country">
+                        <h4>Landmark Country</h4>
+                        <input type="text" name="landmark[country]" placeholder="Landmark's Country" required>
+                      </div>
+
+                      <div id="landmark-comment">
+                        <h4>Landmark Comment</h4>
+                        <input type="text"  name="landmark[comment]" placeholder="Landmark's Comment" required>
+                      </div>
+                      <input type="submit" value="CREATE" />
+                    </form>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div id="creation-message"></div>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="col-12-md" id="creation-content">
+            <div id="landmark-display"></div>
+        </div>
+    <script>
+    function openCity(e, tabName) {
+    let i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "flex";
+    e.currentTarget.className += " active";
+    }
+    </script>
+    </body>
+</html>
